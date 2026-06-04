@@ -1,0 +1,30 @@
+RewriteEngine On
+
+# Global
+RewriteRule ^admin$ admin.php
+RewriteRule ^home$ index.php
+
+# ------------------- View ------------------- 
+# Service Realisations
+RewriteRule ^listeServicesRea$ view/pages/admin/serviceRea/liste.php
+RewriteRule ^corbeilleServicesRea$ view/pages/admin/serviceRea/corbeille.php
+
+#Client
+RewriteRule ^listeClient$ view/pages/admin/client/liste.php
+RewriteRule ^corbeilleClient$ view/pages/admin/client/corbeille.php
+
+#Contact
+RewriteRule ^listeClient$ view/pages/admin/contact/liste.php
+
+#Faq
+RewriteRule ^listeFaq$ view/pages/admin/faq/liste.php
+RewriteRule ^corbeilleFaq$ view/pages/admin/faq/corbeille.php
+
+#Profil
+RewriteRule ^listeProfil$ view/pages/admin/profil/profil.php
+
+#User 
+RewriteRule ^listeUser$ view/pages/admin/user/liste.php
+RewriteRule ^corbeilleUser$ view/pages/admin/user/corbeille.php
+
+
