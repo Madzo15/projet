@@ -101,7 +101,7 @@
 			const formData = new FormData(this);
 			const messageDiv = document.getElementById('messageDiv');
 
-			fetch('auth/login-process.php', {
+			fetch('auth/processusLogin.php', {
 				method: 'POST',
 				body: formData
 			})

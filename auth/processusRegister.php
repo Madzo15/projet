@@ -11,8 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-$firstname = trim($_POST['prenom'] ?? '');
-$lastname = trim($_POST['nom'] ?? '');
+$nom = trim($_POST['nom'] ?? '');
 $email = trim($_POST['email'] ?? '');
 $email_confirm = trim($_POST['email_confirm'] ?? '');
 $phone = trim($_POST['telephone'] ?? '');
@@ -22,13 +21,14 @@ try {
     $db = Database::getConnection();
     $userDB = new UserDB($db);
 
+    $userDB->createRolesTable();
     $userDB->createUsersTable();
 
     if ($email !== $email_confirm) {
         throw new Exception("Les adresses email ne correspondent pas");
     }
 
-    $userDB->register($firstname, $lastname, $email, $phone, $password);
+    $userDB->register($nom, $email, $phone, $password);
 
     echo json_encode([
         'success' => true,

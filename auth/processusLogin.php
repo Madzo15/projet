@@ -20,11 +20,11 @@ try {
 
     $user = $userDB->login($email, $password);
 
-    $_SESSION['user_id'] = $user['id'];
-    $_SESSION['user_firstname'] = $user['prenom'];
-    $_SESSION['user_lastname'] = $user['nom'];
-    $_SESSION['user_email'] = $user['email'];
-    $_SESSION['user_phone'] = $user['telephone'];
+    $_SESSION['id'] = $user['id'];
+    $_SESSION['nom'] = $user['nom'];
+    $_SESSION['email'] = $user['email'];
+    $_SESSION['phone'] = $user['telephone'];
+    $_SESSION['role_id'] = $user['role_id'];
     $_SESSION['logged_in'] = true;
 
     echo json_encode([
